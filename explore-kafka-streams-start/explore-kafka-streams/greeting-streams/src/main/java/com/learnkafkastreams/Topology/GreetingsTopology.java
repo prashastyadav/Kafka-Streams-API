@@ -11,7 +11,7 @@ public class GreetingsTopology {
 
     public static String greetings = "greetings";
 
-    public static String greetings_Uppercase = "GREETINGS";
+    public static String greetings_uppercase = "greetings_uppercase";
 
     public static Topology buildTopology(){
 
@@ -36,7 +36,7 @@ public class GreetingsTopology {
         modifiedStream.print(Printed.<String, String>toSysOut().withLabel("modifiedStream"));
 
         //Sink processor
-        modifiedStream.to(greetings_Uppercase, Produced.with(Serdes.String(),Serdes.String()));
+        modifiedStream.to(greetings_uppercase, Produced.with(Serdes.String(),Serdes.String()));
 
 
         return  streamsBuilder.build();
